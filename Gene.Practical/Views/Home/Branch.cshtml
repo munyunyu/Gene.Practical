@@ -1,0 +1,45 @@
+﻿@model Gene.Practical.Models.BrancViewModel
+
+@{
+    ViewData["Title"] = "Branch";
+}
+
+<h2>Branch</h2>
+
+<h4>Create Branch</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Branch">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input asp-for="User_FK" hidden="hidden" />
+
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" readonly="readonly" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Branch" class="control-label"></label>
+                <input asp-for="Branch" class="form-control" />
+                <span asp-validation-for="Branch" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Code" class="control-label"></label>
+                <input asp-for="Code" class="form-control" />
+                <span asp-validation-for="Code" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Branches">Back to List</a>
+</div>
+
